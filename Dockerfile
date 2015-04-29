@@ -2,7 +2,9 @@ FROM phusion/baseimage:0.9.15
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN mkdir /install && \
-	apt-get update -qq && apt-get install -y python2.7 -qq
+    apt-get update -qq && \
+    apt-get install -y python2.7 -qq && \
+    rm -rf /var/lib/apt/lists/*
 
 ADD get-pip.py /install/get-pip.py
 ADD flexget_requirements.txt /install/flexget_requirements.txt
