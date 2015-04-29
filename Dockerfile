@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.15
+FROM ryanckoch/docker-ubuntu-14.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN mkdir /install && \
