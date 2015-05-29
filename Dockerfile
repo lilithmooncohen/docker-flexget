@@ -3,7 +3,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN mkdir /install && \
     apt-get update -qq && \
-    apt-get install -y python2.7 -qq && \
+    apt-get install -y python2.7 curl -qq && \
     rm -rf /var/lib/apt/lists/*
 
 ADD get-pip.py /install/get-pip.py
