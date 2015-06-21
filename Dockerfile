@@ -17,4 +17,4 @@ RUN python2.7 /install/get-pip.py && \
 
 VOLUME ["/root/.flexget"]
 
-CMD ["/usr/local/bin/flexget", "--loglevel", "info", "daemon", "start"]
+CMD ["nice", "-n", "5", "/usr/local/bin/flexget", "--loglevel", "info", "daemon", "start"]
