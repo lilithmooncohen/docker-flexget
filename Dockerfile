@@ -6,7 +6,7 @@ RUN mkdir /install && \
     apt-get install -y python2.7 curl -qq && \
     rm -rf /var/lib/apt/lists/*
 
-ADD get-pip.py /install/get-pip.py
+RUN curl -L https://bootstrap.pypa.io/get-pip.py | bash
 ADD flexget_requirements.txt /install/flexget_requirements.txt
 
 RUN python2.7 /install/get-pip.py && \
