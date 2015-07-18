@@ -3,8 +3,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 ADD flexget_requirements.txt /install/flexget_requirements.txt
 
-RUN mkdir /install && \
-    apt-get update -qq && \
+RUN apt-get update -qq && \
     apt-get install -y python2.7 curl -qq && \
     rm -rf /var/lib/apt/lists/*
 
