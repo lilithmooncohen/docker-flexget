@@ -11,6 +11,9 @@ RUN curl -L https://bootstrap.pypa.io/get-pip.py | python2.7 && \
     echo 'export LANG=en_US.UTF-8' >> /root/.bashrc && \
     echo 'export LANGUAGE=en_US.UTF-8' >> /root/.bashrc
 
+ADD bin/entrypoint.sh /entrypoint.sh
+
 VOLUME ["/root/.flexget"]
 
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/local/bin/flexget", "--loglevel", "info", "daemon", "start"]
